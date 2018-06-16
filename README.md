@@ -44,6 +44,8 @@
 - Desacoplar la lógica de negocio: https://youtu.be/OU8VhFLtCVM
 - Arquitectura de software 1: https://youtu.be/2Bcbls0bBzs
 - Arquitectura de software 2: https://youtu.be/97_3-D4NrI0
+- Test Unitario: https://www.youtube.com/watch?v=6EqQWVQNwlw
+- Pruebas de Cobertura: https://www.youtube.com/watch?v=F0qx_WXz5Z8
 
 
 
