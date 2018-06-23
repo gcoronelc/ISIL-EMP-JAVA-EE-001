@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix} Wilson Store App
+${licensePrefix} Tarea para el curso Java - ISIL - SUNARP ${licensePrefix}
+<#if licenseLast??>
+${licenseLast}
+</#if>
