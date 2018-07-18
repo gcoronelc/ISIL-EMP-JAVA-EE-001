@@ -1,0 +1,34 @@
+create or replace procedure ADM_ACM_EDITEMPLEADODATA
+(P_CO_EMPL EMPLEADO.CO_EMPL%TYPE,
+ P_APE_PAT EMPLEADO.APE_PAT%TYPE,
+ P_APE_MAT EMPLEADO.APE_MAT%TYPE,
+ P_NOMBRE EMPLEADO.NOMBRE%TYPE--,
+ --P_CO_AREA EMPLEADO.CO_AREA%TYPE
+ )
+as
+  v_msg varchar2(1000);
+  V_APE_PAT EMPLEADO.APE_PAT%TYPE;
+  V_APE_MAT EMPLEADO.APE_MAT%TYPE;
+  V_NOMBRE EMPLEADO.NOMBRE%TYPE;
+begin
+  V_APE_PAT := UPPER(P_APE_PAT);
+  V_APE_MAT := UPPER(P_APE_MAT);
+  V_NOMBRE := UPPER(P_NOMBRE);
+  
+  -- Actualiza EMPLEADO
+  UPDATE EMPLEADO
+  SET APE_PAT= V_APE_PAT , APE_MAT= V_APE_MAT ,
+      NOMBRE = V_NOMBRE,
+  --CO_AREA = P_CO_AREA , CO_CARGO='04'
+  FEC_MOD = SYSDATE
+  WHERE CO_EMPL = P_CO_EMPL ;
+  
+   -- Confirmar la Tx
+  commit;
+exception
+  when others then
+    v_msg := sqlerrm; -- capturar mensaje de error
+    rollback; -- cancelar transacción
+    raise_application_error(-20001,v_msg);
+end;
+/

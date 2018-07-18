@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+.egcc-panel{
+	margin: 10px;
+	padding: 10px;
+	border: 2px solid blue;
+}
+
+.egcc-panel-body{
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #778ca3;
+}
+
